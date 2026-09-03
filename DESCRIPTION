@@ -1,0 +1,33 @@
+Package: LilSpecUnmixR
+Title: Free spectral unmixing and model diagnostics in R
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Yuchen", "Li", email= "yuchen.li@sydney.edu.au", role = c("aut", "cre")))
+Description: This gives you an open-source way to perform spectral unmixing using reference control .fcs files and raw data .fcs files. 
+    It then writes unmixed .fcs files that you can explore. 
+    This also contains the metrics that help identify potential fluorophore unstability or interaction.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    dplyr,
+    ggplot2,
+    tidyr,
+    stringr,
+    ggcyto,
+    grDevices,
+    stats,
+    flowCore,
+    flowSpectrum,
+    matrixStats,
+    corrplot,
+    data.table,
+    pheatmap,
+    proxy,
+    reshape2,
+    scales
+Suggests:
+    purrr,
+    BiocManager,
+    remotes
