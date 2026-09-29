@@ -24,7 +24,11 @@ M_generate <- function(df, refs, plot=TRUE){
       theme(legend.title = element_text(size=0.1))+
       ylab("")+
       xlab("")
+
     #save the plot
+    if (!dir.exists("./plots")){
+      dir.create("./plots")
+    }
     ggplot2::ggsave("./plots/bead_and_cell_ref control spectral profiles.png", width = 40, height = 10, units = c("cm"))
 
     # construct the spectra matrix
