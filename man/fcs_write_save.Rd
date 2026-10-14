@@ -4,12 +4,14 @@
 \alias{fcs_write_save}
 \title{Write out the unmixed data and save as RDS}
 \usage{
-fcs_write_save(unmixed_data, sample_name)
+fcs_write_save(unmixed_data, sample_name, model = NULL)
 }
 \arguments{
 \item{unmixed_data}{Matrix, the unmixed full-stained data}
 
 \item{sample_name}{string, name of your sample}
+
+\item{model}{String, "OLS", "WLS" or something}
 }
 \value{
 return the fcs files and saved RDS

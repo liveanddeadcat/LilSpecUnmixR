@@ -29,7 +29,7 @@ unmix_OLS_list <- function(M,fs_raw_dir, aurora_channel_change = FALSE, channels
       stop("If aurora_channel_change = TRUE, supply strings of your Aurora configuration.")
     }
     rownames(pseudo_inver_M) <- colnames(M)
-    colnames(pseudo_inver_M) <- aurora_channels
+    colnames(pseudo_inver_M) <- channels
 
   }else{
     aurora_channels <- c('UV1-A',  'UV2-A',  'UV3-A',  'UV4-A',  'UV5-A',  'UV6-A',  'UV7-A',  'UV8-A',  'UV9-A',  'UV10-A','UV11-A', 'UV12-A', 'UV13-A', 'UV14-A', 'UV15-A', 'UV16-A', 'V1-A',   'V2-A',

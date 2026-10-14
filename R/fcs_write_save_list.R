@@ -20,7 +20,7 @@ fcs_write_save_list <- function(unmixed_data_list, rds_name=NULL, model = NULL){
     ff <- flowFrame(as.matrix(unmixed_data_list[[name]]))
 
     # write the fcs file
-    write.FCS(ff, filename = paste0("./unmixed/", model, "ols_unmixed_", name, ".fcs"))
+    write.FCS(ff, filename = paste0("./unmixed/", model, "_unmixed_", name, ".fcs"))
   })
 
  # Save the unmixing results

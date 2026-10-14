@@ -27,6 +27,7 @@ unmix_WLS_list <- function(M,fs_raw_dir, aurora_channel_change = FALSE, channels
   if (aurora_channel_change==TRUE){
     if (is.null(channels)){
       stop("If aurora_channel_change = TRUE, supply strings of your Aurora configuration.")
+      aurora_channels <- channels
     }
 
   }else{
