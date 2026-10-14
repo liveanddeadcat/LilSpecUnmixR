@@ -4,12 +4,14 @@
 \alias{fcs_write_save_list}
 \title{Write out to fcs for a list of unmixed data and save as RDS}
 \usage{
-fcs_write_save_list(unmixed_data_list, rds_name = NULL)
+fcs_write_save_list(unmixed_data_list, rds_name = NULL, model = NULL)
 }
 \arguments{
 \item{unmixed_data_list}{List of matrices, the unmixed data}
 
 \item{rds_name}{String, a name to save the list of unmixed data matrices as an .rds}
+
+\item{model}{String, "OLS", "WLS" or something}
 }
 \value{
 return the fcs files and saved RDS
