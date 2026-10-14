@@ -5,5 +5,3 @@ An R package containing the spectral unmixing and analysis functions from [Yuche
 OLS and WLS unmixing are currently available. Panel diagnostics are available.
 
 Clone this repository or download and unzip it to install from the path.
-
-Alternatively, download the built tar.gz package file and install & build from it.
