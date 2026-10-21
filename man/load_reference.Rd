@@ -8,6 +8,7 @@ load_reference(
   ref_dir,
   af = TRUE,
   af_dir,
+  dir_name_replace = NULL,
   change_order = FALSE,
   custom_order = FALSE,
   channel_order = NULL
@@ -19,6 +20,8 @@ load_reference(
 \item{af}{Whether to do autofluorescence extraction. Default = TRUE, recommended.}
 
 \item{af_dir}{Directory containing AF .fcs, string}
+
+\item{dir_name_replace}{String, type the directory name that you may want to remove from file names to be more succinct.}
 
 \item{change_order}{Logical, only use when exporting gated .fcs files from flowjo. Default order is as in Aurora in WIMR, Australia.}
 

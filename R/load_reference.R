@@ -5,21 +5,22 @@
 #' @param ref_dir Directory containing reference control .fcs, string
 #' @param af Whether to do autofluorescence extraction. Default = TRUE, recommended.
 #' @param af_dir Directory containing AF .fcs, string
+#' @param dir_name_replace String, type the directory name that you may want to remove from file names to be more succinct.
 #' @param change_order Logical, only use when exporting gated .fcs files from flowjo. Default order is as in Aurora in WIMR, Australia.
 #' @param custom_order Change order to another Aurora's channels.
 #' @param channel_order When custom_order = TRUE, enter a string vector of the Aurora channels.
 #' @returns return a data.frame of channels, normalised signatures, marker names
 #' @export
-load_reference <- function(ref_dir, af=TRUE, af_dir, change_order=FALSE, custom_order=FALSE, channel_order=NULL){
+load_reference <- function(ref_dir, af=TRUE, af_dir, dir_name_replace = NULL, change_order=FALSE, custom_order=FALSE, channel_order=NULL){
   files <- dir(ref_dir, pattern = "fcs$", full.names=T)
   as.matrix(files)
   # read in fcs files
   dat <- lapply(files, flowCore::read.FCS)
-  names(dat) <-gsub("./ref controls/","",files)
+  names(dat) <-gsub(dir_name_replace,"",files)
   as.matrix(names(dat))
   p1 <- lapply(seq(2,length(dat), by = 2), function(i){flowSpectrum::spectralplot(dat[[i]], normalize = TRUE, guessPop = TRUE, unstained = dat[[i-1]])$data})
   #Name the list of new dfs
-  names(p1) <- gsub("./ref control/", "",names(dat[seq(2,length(dat),2)]))
+  names(p1) <- gsub(dir_name_replace, "",names(dat[seq(2,length(dat),2)]))
   names(p1) <- gsub("_pos.fcs", "",names(dat[seq(2,length(dat),2)]))
   print(as.matrix(names(p1)))
 
